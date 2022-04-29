@@ -1,5 +1,5 @@
 import {Page} from "@playwright/test";
-import {IContractorTypeContract} from "../utils/interfaces/ContractTypeContract";
+import {IFixedRateContract, IGeneralFieldsContract} from "../utils/interfaces/ContractTypeContract";
 
 export class ContractsPage {
 
@@ -9,7 +9,8 @@ export class ContractsPage {
         this.page = page;
     }
 
-    public async wasContractCreated(contractSpec: IContractorTypeContract): Promise<boolean> {
+    public async wasContractCreated(contractSpec: IGeneralFieldsContract): Promise<boolean> {
+        await this.page.waitForSelector(`//h1[text()='${contractSpec.contractName}']`, {timeout: 3000});
         return  await this.page.locator(`//h1[text()='${contractSpec.contractName}']`).count() == 1;
     }
 }

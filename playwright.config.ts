@@ -9,7 +9,7 @@ let config: PlaywrightTestConfig;
 config = {
   testDir: './tests',
   /* Maximum time one test can run for. */
-  timeout: 60 * 1000,
+  timeout: 30 * 1000,
   fullyParallel: true,
   expect: {
     /**

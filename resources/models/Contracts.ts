@@ -1,4 +1,4 @@
-import {IContractorTypeContract} from "../utils/interfaces/ContractTypeContract";
+import {IFixedRateContract, IMilestoneContract, IPayAsYouGoContract} from "../utils/interfaces/ContractTypeContract";
 
 export const contracts: IContractsList = {
     CONTRACT_PREFIXED_DATE_MODEL: {
@@ -26,8 +26,7 @@ export const contracts: IContractsList = {
         taxResidence: "United States",
         currency: "GBP - British Pound",
         paymentRate: "2000",
-        paymentFrecuency: "Weekly",
-        specialClause: "Test clause"
+        paymentFrecuency: "Day",
     },
     CONTRACT_MILESTONE_MODEL: {
         contractName: "Milestone Name Contract",
@@ -39,14 +38,14 @@ export const contracts: IContractsList = {
         seniority: "Not applicable",
         taxResidence: "United States",
         currency: "GBP - British Pound",
-        paymentRate: "3000",
-        paymentFrecuency: "Weekly",
-        specialClause: "Test clause"
+        amountPay: "3000",
+        milestoneName: "Milestone Test Name",
+        description: "Test Description",
     }
 }
 
 interface IContractsList {
-    readonly CONTRACT_PREFIXED_DATE_MODEL: IContractorTypeContract,
-    readonly CONTRACT_PLAY_AS_YOU_GO_MODEL: IContractorTypeContract,
-    readonly CONTRACT_MILESTONE_MODEL: IContractorTypeContract
+    readonly CONTRACT_PREFIXED_DATE_MODEL: IFixedRateContract,
+    readonly CONTRACT_PLAY_AS_YOU_GO_MODEL: IPayAsYouGoContract,
+    readonly CONTRACT_MILESTONE_MODEL: IMilestoneContract
 }
