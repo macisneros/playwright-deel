@@ -1,6 +1,6 @@
 import {GeneralInfoFormulary} from "./GeneralInfoFormulary";
 import {Locator, Page} from "@playwright/test";
-import {IFixedRateContract, IPayAsYouGoContract} from "../../utils/interfaces/ContractTypeContract";
+import {IPayAsYouGoContract} from "../../utils/interfaces/ContractTypeContract";
 import {Dropdown} from "../../components/Dropdown";
 
 export class PayAsYouGoContractFormularyPage extends GeneralInfoFormulary {

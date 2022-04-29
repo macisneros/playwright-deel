@@ -1,4 +1,4 @@
-import {IFixedRateContract, IMilestoneContract} from "../../utils/interfaces/ContractTypeContract";
+import {IMilestoneContract} from "../../utils/interfaces/ContractTypeContract";
 import {Locator, Page} from "@playwright/test";
 import {GeneralInfoFormulary} from "./GeneralInfoFormulary";
 import {Dropdown} from "../../components/Dropdown";

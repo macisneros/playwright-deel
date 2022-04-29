@@ -1,5 +1,5 @@
 import {Page} from "@playwright/test";
-import {IFixedRateContract, IGeneralFieldsContract} from "../utils/interfaces/ContractTypeContract";
+import {IGeneralFieldsContract} from "../utils/interfaces/ContractTypeContract";
 
 export class ContractsPage {
 

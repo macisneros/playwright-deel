@@ -1,5 +1,5 @@
 import {Locator, Page} from "@playwright/test";
-import {IFixedRateContract, IGeneralFieldsContract} from "../../utils/interfaces/ContractTypeContract";
+import {IGeneralFieldsContract} from "../../utils/interfaces/ContractTypeContract";
 import {Dropdown} from "../../components/Dropdown";
 import {DropDownInput} from "../../components/DropDownInput";
 import {Calendar} from "../../components/Calendar";
