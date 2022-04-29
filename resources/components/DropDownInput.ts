@@ -1,15 +1,14 @@
 import {Locator} from "@playwright/test";
+import {BaseComponent} from "./BaseComponent";
 
-export class DropDownInput {
-
-    private readonly locator: Locator
+export class DropDownInput extends BaseComponent{
 
     constructor(locator: Locator) {
-        this.locator = locator;
+        super(locator);
     }
 
     public async selectOption(optionName: string) {
-       await this.locator.click();
+        await this.locator.click();
         await this.locator.locator(`//following::p[text()='${optionName}']`).click();
     }
 }

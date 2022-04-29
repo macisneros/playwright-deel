@@ -1,11 +1,10 @@
 import {Locator} from "@playwright/test";
+import {BaseComponent} from "./BaseComponent";
 
-export class Dropdown {
-
-    private readonly locator: Locator
+export class Dropdown extends BaseComponent{
 
     constructor(locator: Locator) {
-        this.locator = locator;
+        super(locator);
     }
 
     public async selectOption(optionName: string) {

@@ -1,11 +1,10 @@
 import {Locator} from "@playwright/test";
+import {BaseComponent} from "./BaseComponent";
 
-export class Calendar {
-
-    private readonly locator: Locator;
+export class Calendar extends BaseComponent{
 
     constructor(locator: Locator) {
-        this.locator = locator;
+        super(locator);
     }
 
     public async setDateByIndex(index: number) {
