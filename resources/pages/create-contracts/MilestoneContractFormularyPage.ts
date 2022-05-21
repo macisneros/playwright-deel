@@ -8,14 +8,14 @@ export class MilestoneContractFormularyPage extends GeneralInfoFormulary {
     private readonly txtMilestoneName: Locator;
     private readonly txtAmountPay: Locator;
     private readonly txtDescription: Locator;
-    private readonly drpCurrency: Locator;
+    private readonly drpCurrency: Dropdown;
 
     constructor(page: Page) {
         super(page);
         this.txtMilestoneName = this.page.locator("//input[@data-qa='milestone-title']");
         this.txtAmountPay = this.page.locator("//input[@data-qa='milestone-amount']");
         this.txtDescription = this.page.locator("//textarea[@name='description']");
-        this.drpCurrency = this.page.locator("//div[@data-qa='currency-select']");
+        this.drpCurrency = new Dropdown(this.page.locator("//div[@data-qa='currency-select']"));
     }
 
     public async generateContract(contractSpec: IMilestoneContract): Promise<void> {
@@ -29,7 +29,7 @@ export class MilestoneContractFormularyPage extends GeneralInfoFormulary {
     }
 
     private async fillUpPaymentDetails (contractSpec: IMilestoneContract): Promise<void> {
-        await new Dropdown(this.drpCurrency).selectOption(contractSpec.currency);
+        await this.drpCurrency.selectOption(contractSpec.currency);
 
         await this.txtMilestoneName.fill(contractSpec.milestoneName);
 
